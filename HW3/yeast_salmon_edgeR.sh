@@ -10,16 +10,37 @@
 # differential gene expression analysis for the experimental data in which an MDS plot and an MA plot are generated to
 # demonstrate intersample variation and the degree of differentiation among the two genotypes
 
-cd git clone https://github.com/ctb/2017-ucdavis-igg201b.git sudo Rscript --no-save
-~/2017-ucdavis-igg201b/lab7/install-edgeR.R
-# Install Salmon
-cd curl -L -O https://github.com/COMBINE-lab/salmon/releases/download/v0.8.0/Salmon-0.8.0_linux_x86_64.tar.gz tar xzf
-Salmon-0.8.0_linux_x86_64.tar.gz export PATH=$PATH:$HOME/Salmon-latest_linux_x86_64/bin
-# Create Yeast Directory
-cd mkdir yeast cd yeast
+# Install edge R using the R script from IGG201B lab 7
 
-# Download the previous SRA Files, with the addition of the following four SRA files, 2 WT and 2 SNF2 ERR458498 6 WT 1
-#ERR458499 7 WT 1 ERR458504 5 SNF2 1 ERR458505 6 SNF2 1
+cd
+
+git clone https://github.com/ctb/2017-ucdavis-igg201b.git
+
+sudo Rscript --no-save~/2017-ucdavis-igg201b/lab7/install-edgeR.R
+
+# Install Salmon
+
+cd
+
+curl -L -O https://github.com/COMBINE-lab/salmon/releases/download/v0.8.0/Salmon-0.8.0_linux_x86_64.tar.gz
+tar xzf Salmon-0.8.0_linux_x86_64.tar.gz
+
+export PATH=$PATH:$HOME/Salmon-latest_linux_x86_64/bin
+
+# Create Yeast Directory
+
+cd
+
+mkdir yeast
+
+cd yeast
+
+# Download the previous SRA Files used in lab 8, with the addition of the following four SRA files, 2 WT and 2 SNF2:
+
+# ERR458498 6 WT 1
+# ERR458499 7 WT 1
+# ERR458504 5 SNF2 1
+# ERR458505 6 SNF2 1
 
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR458/ERR458500/ERR458500.fastq.gz
 curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR458/ERR458501/ERR458501.fastq.gz
