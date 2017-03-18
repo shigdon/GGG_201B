@@ -56,5 +56,5 @@ dev.off()
 
 # output CSV for 0-6 hr
 
-write.csv(etp$table, "yeast-edgeR.csv")
+write.csv(etp$table, "smh-hw3-yeast-edgeR.csv")
 
