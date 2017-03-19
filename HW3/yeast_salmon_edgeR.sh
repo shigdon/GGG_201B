@@ -16,7 +16,7 @@ cd
 
 git clone https://github.com/ctb/2017-ucdavis-igg201b.git
 
-sudo Rscript --no-save~/2017-ucdavis-igg201b/lab7/install-edgeR.R
+sudo Rscript --no-save~/2017 -ucdavis-igg201b/lab7/install-edgeR.R
 
 # Install Salmon
 
