@@ -108,6 +108,8 @@ awk 'BEGIN {FS = ","} ; {if ($5 <= 0.05) print $0}' ~/yeast/smh-hw3-yeast-edgeR.
 # lower than 0.2, but using a single line of awk code one may probe the edgeR csv file for gene counts within the edgeR output
 # table at lower FDR p-values. Using the same awk code to count the number of dge records in the .csv table output from edgeR,
 # it is easy to see that using a more stringent FDR p-value threshold decreases the number of differentially expressed genes
-# reported. The Number of genes reported in the table is the same in the edgeR output from both datasets at the FDR = 0.2 level,
-# but the number of genes at the level of 0.05 is higher for the larger dataset, suggesting that increasing replication could be
-# a way to detect more differential gene expression events, or increase the number of false discoveries...
+# reported. The Number of genes reported in the tables from the edgeR output from both datasets at the FDR = 0.2 level show a
+# similar difference in the number of differentially expressed genes compared to the difference at the FDR = 0.05 level.
+# Because the number of differentially expressed genes identified increased with the increase in RNAseq library replications, 
+# increasing replication seems to be a good strategy for detecting more differential gene expression events, which is implied by
+# the similar difference in number of genes identified across both analyses at both FDR levels.
