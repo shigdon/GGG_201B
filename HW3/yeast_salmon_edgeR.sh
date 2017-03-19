@@ -80,13 +80,13 @@ Rscript --no-save ~/GGG_201B/HW3/smh_edgeR.R
 
 echo "The number of genes with an FDR p-value less than 0.2 from the RNAseq libraries included in the lab 8 analysis is:"
 
-wc -l ~/GGG_201B/HW3/yeast-edgeR-lab8.csv
+awk 'BEGIN {FS = ","} ; {if ($5 <= 0.2) print $0}' ~/GGG_201B/HW3/yeast-edgeR-lab8.csv | grep -cv ",\"FDR"
 
 # Count the number of genes that were identified from the edgeR analysis using the HW3 dataset with an FDR level of 0.2 or less
 
 echo "The number of genes with an FDR p-value less than 0.2 from the RNAseq libraries included in the HW3 analysis is:"
 
-wc -l ~/yeast/smh-hw3-yeast-edgeR.csv
+awk 'BEGIN {FS = ","} ; {if ($5 <= 0.2) print $0}' ~/yeast/smh-hw3-yeast-edgeR.csv | grep -cv ",\"FDR"
 
 # Count the number of genes that were identified as differentially expressed using an FDR level of 0.05 form the lab8 edgeR output
 
@@ -106,7 +106,8 @@ awk 'BEGIN {FS = ","} ; {if ($5 <= 0.05) print $0}' ~/yeast/smh-hw3-yeast-edgeR.
 # replicate 1 of both the wt and the mutant yeast lines. All libraries included in this analysis consisted of technical
 # replicates from the same biological replicate. The edge R script generates a table that keeps all genes with an FDR p-value
 # lower than 0.2, but using a single line of awk code one may probe the edgeR csv file for gene counts within the edgeR output
-# table at lower FDR p-values. Using the wc command to count the number of dge records in the .csv table output from edgeR,
+# table at lower FDR p-values. Using the same awk code to count the number of dge records in the .csv table output from edgeR,
 # it is easy to see that using a more stringent FDR p-value threshold decreases the number of differentially expressed genes
-# reported. The output for the number of genes identified with the wc command reflects the number of genes in each table, minus 1,
-# where the first line of the .csv files contains the field headers.
+# reported. The Number of genes reported in the table is the same in the edgeR output from both datasets at the FDR = 0.2 level,
+# but the number of genes at the level of 0.05 is higher for the larger dataset, suggesting that increasing replication could be
+# a way to detect more differential gene expression events, or increase the number of false discoveries...
