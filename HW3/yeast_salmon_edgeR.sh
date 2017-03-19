@@ -82,6 +82,6 @@ awk 'BEGIN {FS = ","} ; {if ($5 <= 0.05) print $0}' ~/GGG_201B/HW3/yeast-edgeR-l
 
 # Count the number of genes that were identified as differentially expressed using an FDR level of 0.05 form the lab8 edgeR file
 
-awk 'BEGIN {FS = ","} ; {if ($5 <= 0.05) print $0}' ~/GGG_201B/HW3/yeast/smh-hw3-yeast-edgeR.csv | grep -cv ",\"FDR"
+awk 'BEGIN {FS = ","} ; {if ($5 <= 0.05) print $0}' ~/yeast/smh-hw3-yeast-edgeR.csv | grep -cv ",\"FDR"
 
 # SH: The MD
